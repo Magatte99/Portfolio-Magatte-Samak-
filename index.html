@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magatte SAMAKE — Portfolio Supply Chain & Data</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+
+      --accent-purple: #a855f7;
+      --accent-purple-light: #c084fc;
+      --accent-purple-bg: rgba(168, 85, 247, 0.1);
+
+      --accent-blue: #38bdf8;
+      --accent-blue-light: #7dd3fc;
+      --accent-blue-bg: rgba(56, 189, 248, 0.1);
+
+      --accent-green: #22c55e;
+      --accent-green-light: #4ade80;
+      --accent-green-bg: rgba(34, 197, 94, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    /* Navigation Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-blue);
+    }
+
+    .status-badge {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--accent-green);
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 2.5rem 0;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-purple-light);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      max-width: 750px;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-purple);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #9333ea;
+    }
+
+    .btn-secondary {
+      background-color: var(--card-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #334155;
+    }
+
+    /* Stats bar */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .stat-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border-top: 3px solid var(--accent-purple);
+    }
+
+    .stat-card:nth-child(2) { border-top-color: var(--accent-blue); }
+    .stat-card:nth-child(3) { border-top-color: var(--accent-green); }
+    .stat-card:nth-child(4) { border-top-color: var(--accent-purple); }
+
+    .stat-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-card:nth-child(1) .stat-value { color: var(--accent-purple-light); }
+    .stat-card:nth-child(2) .stat-value { color: var(--accent-blue-light); }
+    .stat-card:nth-child(3) .stat-value { color: var(--accent-green-light); }
+    .stat-card:nth-child(4) .stat-value { color: var(--accent-purple-light); }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 3rem 0 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Grid Layout */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    @media (min-width: 768px) {
+      .project-card {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    .project-card:hover {
+      border-color: #475569;
+    }
+
+    .project-card.chainpilot { border-top: 4px solid var(--accent-purple); }
+    .project-card.shopmeaway { border-top: 4px solid var(--accent-blue); }
+    .project-card.mfenergy { border-top: 4px solid var(--accent-green); }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .chainpilot .project-title { color: var(--accent-purple-light); }
+    .shopmeaway .project-title { color: var(--accent-blue-light); }
+    .mfenergy .project-title { color: var(--accent-green-light); }
+
+    .tag {
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .tag-purple {
+      background-color: var(--accent-purple-bg);
+      color: var(--accent-purple-light);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    .tag-blue {
+      background-color: var(--accent-blue-bg);
+      color: var(--accent-blue-light);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .tag-green {
+      background-color: var(--accent-green-bg);
+      color: var(--accent-green-light);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .project-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .project-details-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-details-list li {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .project-details-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .chainpilot .project-details-list li::before { color: var(--accent-purple); }
+    .shopmeaway .project-details-list li::before { color: var(--accent-blue); }
+    .mfenergy .project-details-list li::before { color: var(--accent-green); }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-badge {
+      background-color: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    /* UI Mock Blocks */
+    .project-preview {
+      background: #090d16;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--card-border);
+    }
+
+    .ui-mockup {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .ui-header {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .ui-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #334155;
+    }
+
+    .ui-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .ui-stat-card {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .chainpilot .ui-stat-card { border-left: 3px solid var(--accent-purple); }
+    .shopmeaway .ui-stat-card { border-left: 3px solid var(--accent-blue); }
+    .mfenergy .ui-stat-card { border-left: 3px solid var(--accent-green); }
+
+    .ui-stat-label { font-size: 0.7rem; color: var(--text-secondary); }
+    .ui-stat-val { font-size: 1.1rem; font-weight: 700; margin-top: 2px; }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .info-table td {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--card-border);
+      color: var(--text-secondary);
+    }
+
+    .info-table tr:last-child td { border-bottom: none; }
+    .info-table td:first-child { font-weight: 600; color: var(--text-primary); }
+
+    /* Tables & Timeline */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .two-cols { grid-template-columns: 1fr 1fr; }
+    }
+
+    .info-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .info-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.25rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-role { font-weight: 600; font-size: 0.95rem; }
+    .timeline-company { color: var(--accent-blue); font-size: 0.85rem; }
+    .timeline-date { color: var(--text-secondary); font-size: 0.75rem; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0 1rem 0;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-logo">MAGATTE SAMAKE</div>
+    <ul class="nav-links">
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#competences">Compétences</a></li>
+    </ul>
+    <div class="status-badge">
+      <span class="status-dot"></span> Disponible pour opportunités
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 class="hero-title">Magatte SAMAKE</h1>
+      <div class="hero-subtitle">Supply Chain & Logistics Coordinator | Digitalisation & Automation</div>
+      <p class="hero-description">
+        Spécialiste en coordination logistique internationale, gestion des approvisionnements et distribution d'énergie. J'aide à concevoir des outils de pilotage automatisés et intuitifs pour fiabiliser le reporting et optimiser la prise de décision.
+      </p>
+
+      <div class="btn-group">
+        <a href="https://www.linkedin.com/in/magatte-samake" target="_blank" class="btn btn-primary">LinkedIn</a>
+        <a href="mailto:magatte99@hotmail.fr" class="btn btn-secondary">Email direct</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Expéditions groupage — USA</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Expéditions groupage — Chine</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~50</div>
+          <div class="stat-label">Expéditions — Canada & Dubaï</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3 ans</div>
+          <div class="stat-label">Coordination sur 4 corridors internationaux</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets Phares -->
+    <section id="projets">
+      <h2 class="section-title">🚀 Projets Phares & Études de Cas</h2>
+
+      <div class="projects-grid">
+
+        <!-- CHAINPILOT (Violet) -->
+        <div class="project-card chainpilot">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">ChainPilot — Command Center</h3>
+              <span class="tag tag-purple">v1.0 (Fév 2026)</span>
+            </div>
+            <p class="project-subtitle">Tableau de bord interactif et centralisé pour le suivi quotidien de la Supply Chain.</p>
+
+            <ul class="project-details-list">
+              <li><strong>Commandes clients :</strong> suivi de bout en bout du bon de commande jusqu'à la livraison finale.</li>
+              <li><strong>Analyse transporteurs :</strong> évaluation continue de la performance des prestataires logistiques.</li>
+              <li><strong>Gestion des stocks :</strong> alertes dynamiques de seuils et visibilité sur le stock actif.</li>
+              <li><strong>Gain opérationnel :</strong> réduction des erreurs manuelles et automatisation des tâches répétitives.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-badge">Google Sheets</span>
+              <span class="tech-badge">Apps Script</span>
+              <span class="tech-badge">Automation</span>
+              <span class="tech-badge">KPIs Reporting</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Suivi flux</div>
+                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">100% centralisé</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Automation</div>
+                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">Temps réel</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Produit</td><td>ChainPilot Command Center</td></tr>
+                <tr><td>Créé par</td><td>Magatte Samaké</td></tr>
+                <tr><td>Spécialité</td><td>Supply Chain & Logistique</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHOPMEAWAY — COORDINATION INTERNATIONALE (Bleu) -->
+        <div class="project-card shopmeaway">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Coordination Internationale — Shopmeaway</h3>
+              <span class="tag tag-blue">Depuis juin 2023</span>
+            </div>
+            <p class="project-subtitle">Pilotage d'expéditions internationales sur 4 corridors d'approvisionnement, de la cotation à la livraison.</p>
+
+            <ul class="project-details-list">
+              <li><strong>Multi-corridors :</strong> coordination d'expéditions groupage sur les États-Unis, la Chine, les Émirats Arabes Unis et le Canada.</li>
+              <li><strong>Prestataires :</strong> sélection et évaluation continue des transporteurs selon coût, délai et fiabilité.</li>
+              <li><strong>Cotations fret B2B :</strong> analyse des besoins, sollicitation des prestataires, consolidation des devis.</li>
+              <li><strong>Partenariat La Poste Sénégal :</strong> structuration de l'escalade des incidents et formation des agents de terrain ; pilotage de l'adoption de la plateforme logistique SAWA.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-badge">Fret international</span>
+              <span class="tech-badge">AWB & documentation</span>
+              <span class="tech-badge">SAWA</span>
+              <span class="tech-badge">Matières dangereuses</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">USA</div>
+                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">100+ expéditions</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Chine</div>
+                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">100+ expéditions</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Canada & Dubaï</td><td>~50 expéditions</td></tr>
+                <tr><td>Corridors actifs</td><td>4 (USA, Chine, UAE, Canada)</td></tr>
+                <tr><td>Statut</td><td>🟢 En cours</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- MF ENERGIES (Vert) -->
+        <div class="project-card mfenergy">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">MF Energies — Case Study</h3>
+              <span class="tag tag-green">Pétrole & Distribution</span>
+            </div>
+            <p class="project-subtitle">Modélisation du réapprovisionnement et suivi des stocks d'un réseau de stations-service (cas simulé).</p>
+
+            <ul class="project-details-list">
+              <li><strong>Objectif :</strong> anticiper les besoins en carburant du réseau pour prévenir les ruptures sans surstocker.</li>
+              <li><strong>Préparation (Excel) :</strong> structuration des données stations, stocks, consommation et livraisons.</li>
+              <li><strong>Transformation (Power Query) :</strong> nettoyage et contrôle qualité des 4 jeux de données.</li>
+              <li><strong>Visualisation (Power BI) :</strong> dashboard interactif de pilotage des stocks et des priorités de réapprovisionnement.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">Power Query</span>
+              <span class="tech-badge">Excel</span>
+              <span class="tech-badge">Logistique pétrolière</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Jeux de données</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">4 sources</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Période</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Janvier 2026</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Secteur</td><td>Distribution de carburant</td></tr>
+                <tr><td>Portée</td><td>Stocks & réapprovisionnement</td></tr>
+                <tr><td>Statut</td><td>🟢 Terminé</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Expériences et Compétences -->
+    <div class="two-cols">
+
+      <!-- Expériences -->
+      <section id="parcours" class="info-box">
+        <h3>💼 Parcours Professionnel</h3>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Coordinatrice Logistique & Supply Chain</div>
+          <div class="timeline-company">Shopmeaway</div>
+          <div class="timeline-date">Juin 2023 — Présent</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Assistante Achats (Procurement Assistant)</div>
+          <div class="timeline-company">TP (anciennement Majorel)</div>
+          <div class="timeline-date">Sept 2022 — Fév 2023</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Assistante Achats & Supply Chain</div>
+          <div class="timeline-company">Cabinet Carrée</div>
+          <div class="timeline-date">Sept — Déc 2021</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Assistante Logistique</div>
+          <div class="timeline-company">WMS Oil SA — Secteur pétrolier</div>
+          <div class="timeline-date">Mars 2021</div>
+        </div>
+      </section>
+
+      <!-- Compétences & Outils -->
+      <section id="competences" class="info-box">
+        <h3>🛠️ Compétences & Outils</h3>
+
+        <table class="info-table">
+          <tr>
+            <td>Data & dashboard</td>
+            <td>Power BI, Power Query, Excel avancé, Google Sheets, Apps Script</td>
+          </tr>
+          <tr>
+            <td>Logistique</td>
+            <td>Coordination multi-origines (USA, Chine, UAE, Canada), fret international, cotations fret, matières dangereuses</td>
+          </tr>
+          <tr>
+            <td>Achats & carburant</td>
+            <td>Sourcing fournisseurs, bons de commande, logistique carburant (stocks, chargement)</td>
+          </tr>
+          <tr>
+            <td>Diplômes</td>
+            <td>Master Supply Chain Management & Licence BBA Transports/Logistique (IAM Dakar)</td>
+          </tr>
+          <tr>
+            <td>Langues</td>
+            <td>Français (bilingue), Anglais (professionnel), Wolof (langue maternelle)</td>
+          </tr>
+        </table>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Magatte Samaké — Supply Chain & Data Portfolio</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
