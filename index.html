@@ -131,7 +131,7 @@
     }
 
     .hero-description {
-      max-width: 750px;
+      max-width: 780px;
       color: var(--text-secondary);
       font-size: 1rem;
       margin-bottom: 1.5rem;
@@ -179,7 +179,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     @media (min-width: 768px) {
@@ -199,7 +199,7 @@
     .stat-card:nth-child(4) { border-top-color: var(--accent-purple); }
 
     .stat-value {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
@@ -245,7 +245,7 @@
 
     @media (min-width: 768px) {
       .project-card {
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1.15fr 0.85fr;
       }
     }
 
@@ -314,16 +314,31 @@
       font-style: italic;
     }
 
+    .sub-section-box {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .sub-section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .chainpilot .sub-section-title { color: var(--accent-purple-light); }
+
     .project-details-list {
       list-style: none;
-      margin-bottom: 1.5rem;
     }
 
     .project-details-list li {
       color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+      padding-left: 1.2rem;
       position: relative;
     }
 
@@ -342,6 +357,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      margin-top: 1rem;
     }
 
     .tech-badge {
@@ -402,7 +418,7 @@
     .mfenergy .ui-stat-card { border-left: 3px solid var(--accent-green); }
 
     .ui-stat-label { font-size: 0.7rem; color: var(--text-secondary); }
-    .ui-stat-val { font-size: 1.1rem; font-weight: 700; margin-top: 2px; }
+    .ui-stat-val { font-size: 1.05rem; font-weight: 700; margin-top: 2px; }
 
     .info-table {
       width: 100%;
@@ -476,7 +492,7 @@
   <header>
     <div class="nav-logo">MAGATTE SAMAKE</div>
     <ul class="nav-links">
-      <li><a href="#projets">Projets</a></li>
+      <li><a href="#projets">Projets Supply Chain</a></li>
       <li><a href="#parcours">Parcours</a></li>
       <li><a href="#competences">Compétences</a></li>
     </ul>
@@ -490,63 +506,80 @@
     <!-- Hero Section -->
     <section class="hero">
       <h1 class="hero-title">Magatte SAMAKE</h1>
-      <div class="hero-subtitle">Supply Chain & Logistics Coordinator | Digitalisation & Automation</div>
+      <div class="hero-subtitle">Supply Chain & Logistics Coordinator | Operational Analytics & Automation</div>
       <p class="hero-description">
-        Spécialiste en coordination logistique internationale, gestion des approvisionnements et distribution d'énergie. J'aide à concevoir des outils de pilotage automatisés et intuitifs pour fiabiliser le reporting et optimiser la prise de décision.
+        Spécialiste de la coordination logistique internationale, des approvisionnements et du pilotage des opérations. Je conçois des tableaux de bord interactifs et des workflows automatisés pour convertir les flux de données brutes en leviers de décision stratégiques et opérationnels.
       </p>
 
       <div class="btn-group">
-        <a href="https://www.linkedin.com/in/magatte-samake" target="_blank" class="btn btn-primary">LinkedIn</a>
-        <a href="mailto:magatte99@hotmail.fr" class="btn btn-secondary">Email direct</a>
+        <a href="https://www.linkedin.com/in/magatte-samake" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:magatte99@hotmail.fr" class="btn btn-secondary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          magatte99@hotmail.fr
+        </a>
       </div>
 
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-value">100+</div>
-          <div class="stat-label">Expéditions groupage — USA</div>
+          <div class="stat-value">4 Corridors</div>
+          <div class="stat-label">USA, Chine, Émirats Arabes Unis, Canada</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">100+</div>
-          <div class="stat-label">Expéditions groupage — Chine</div>
+          <div class="stat-value">Groupage & Direct</div>
+          <div class="stat-label">Fret aérien/maritime LCL & FCL</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">~50</div>
-          <div class="stat-label">Expéditions — Canada & Dubaï</div>
+          <div class="stat-value">ChainPilot Suite</div>
+          <div class="stat-label">Command Center & Order/Invoice Tracker</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">3 ans</div>
-          <div class="stat-label">Coordination sur 4 corridors internationaux</div>
+          <div class="stat-value">3+ ans</div>
+          <div class="stat-label">Expérience Procurement & Logistique</div>
         </div>
       </div>
     </section>
 
     <!-- Projets Phares -->
     <section id="projets">
-      <h2 class="section-title">🚀 Projets Phares & Études de Cas</h2>
+      <h2 class="section-title">🚀 Projets & Solutions Digitales Supply Chain</h2>
 
       <div class="projects-grid">
 
-        <!-- CHAINPILOT (Violet) -->
+        <!-- CHAINPILOT SUITE (Violet) -->
         <div class="project-card chainpilot">
           <div class="project-content">
             <div class="project-header">
-              <h3 class="project-title">ChainPilot — Command Center</h3>
+              <h3 class="project-title">Écosystème ChainPilot — Decision & Automation Suite</h3>
               <span class="tag tag-purple">v1.0 (Fév 2026)</span>
             </div>
-            <p class="project-subtitle">Tableau de bord interactif et centralisé pour le suivi quotidien de la Supply Chain.</p>
+            <p class="project-subtitle">Suite d'outils digitaux conçue pour centraliser, automatiser et piloter l'ensemble des flux opérationnels Supply Chain.</p>
 
-            <ul class="project-details-list">
-              <li><strong>Commandes clients :</strong> suivi de bout en bout du bon de commande jusqu'à la livraison finale.</li>
-              <li><strong>Analyse transporteurs :</strong> évaluation continue de la performance des prestataires logistiques.</li>
-              <li><strong>Gestion des stocks :</strong> alertes dynamiques de seuils et visibilité sur le stock actif.</li>
-              <li><strong>Gain opérationnel :</strong> réduction des erreurs manuelles et automatisation des tâches répétitives.</li>
-            </ul>
+            <div class="sub-section-box">
+              <div class="sub-section-title">1. ChainPilot — Supply Command Center</div>
+              <ul class="project-details-list">
+                <li><strong>Vue d'ensemble opérationnelle :</strong> Pilotage quotidien des flux logistiques, des expéditions et analyse comparative de la performance des transporteurs.</li>
+                <li><strong>Gestion dynamique des stocks :</strong> Définition des seuils d'alerte, suivi des niveaux actifs et anticipation des réapprovisionnements.</li>
+                <li><strong>Synthèse KPIs :</strong> Visualisation en temps réel du taux de service, des délais et des volumes traités.</li>
+              </ul>
+            </div>
+
+            <div class="sub-section-box">
+              <div class="sub-section-title">2. ChainPilot — Order & Invoice Tracker</div>
+              <ul class="project-details-list">
+                <li><strong>Traçabilité des commandes :</strong> Centralisation du cycle complet de la commande client jusqu'à la livraison finale.</li>
+                <li><strong>Fiabilisation du workflow comptable :</strong> Automatisation de la numérotation des factures et élimination des erreurs de saisie ou des saut de lignes.</li>
+                <li><strong>Performance financière :</strong> Rapprochement commandes/factures et réduction des temps d'analyse.</li>
+              </ul>
+            </div>
 
             <div class="tech-stack">
-              <span class="tech-badge">Google Sheets</span>
-              <span class="tech-badge">Apps Script</span>
-              <span class="tech-badge">Automation</span>
-              <span class="tech-badge">KPIs Reporting</span>
+              <span class="tech-badge">Google Sheets Avancé</span>
+              <span class="tech-badge">Apps Script / Automation</span>
+              <span class="tech-badge">Contrôle de Stocks</span>
+              <span class="tech-badge">Workflow Facturation</span>
             </div>
           </div>
 
@@ -557,66 +590,18 @@
               </div>
               <div class="ui-stats-grid">
                 <div class="ui-stat-card">
-                  <div class="ui-stat-label">Suivi flux</div>
-                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">100% centralisé</div>
+                  <div class="ui-stat-label">Suivi du Cycle</div>
+                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">100% Intégré</div>
                 </div>
                 <div class="ui-stat-card">
-                  <div class="ui-stat-label">Automation</div>
-                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">Temps réel</div>
+                  <div class="ui-stat-label">Fiabilité Saisie</div>
+                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">Zéro Doublon</div>
                 </div>
               </div>
               <table class="info-table">
-                <tr><td>Produit</td><td>ChainPilot Command Center</td></tr>
-                <tr><td>Créé par</td><td>Magatte Samaké</td></tr>
+                <tr><td>Suite</td><td>ChainPilot Command & Tracker</td></tr>
                 <tr><td>Spécialité</td><td>Supply Chain & Logistique</td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- SHOPMEAWAY — COORDINATION INTERNATIONALE (Bleu) -->
-        <div class="project-card shopmeaway">
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">Coordination Internationale — Shopmeaway</h3>
-              <span class="tag tag-blue">Depuis juin 2023</span>
-            </div>
-            <p class="project-subtitle">Pilotage d'expéditions internationales sur 4 corridors d'approvisionnement, de la cotation à la livraison.</p>
-
-            <ul class="project-details-list">
-              <li><strong>Multi-corridors :</strong> coordination d'expéditions groupage sur les États-Unis, la Chine, les Émirats Arabes Unis et le Canada.</li>
-              <li><strong>Prestataires :</strong> sélection et évaluation continue des transporteurs selon coût, délai et fiabilité.</li>
-              <li><strong>Cotations fret B2B :</strong> analyse des besoins, sollicitation des prestataires, consolidation des devis.</li>
-              <li><strong>Partenariat La Poste Sénégal :</strong> structuration de l'escalade des incidents et formation des agents de terrain ; pilotage de l'adoption de la plateforme logistique SAWA.</li>
-            </ul>
-
-            <div class="tech-stack">
-              <span class="tech-badge">Fret international</span>
-              <span class="tech-badge">AWB & documentation</span>
-              <span class="tech-badge">SAWA</span>
-              <span class="tech-badge">Matières dangereuses</span>
-            </div>
-          </div>
-
-          <div class="project-preview">
-            <div class="ui-mockup">
-              <div class="ui-header">
-                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
-              </div>
-              <div class="ui-stats-grid">
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">USA</div>
-                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">100+ expéditions</div>
-                </div>
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Chine</div>
-                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">100+ expéditions</div>
-                </div>
-              </div>
-              <table class="info-table">
-                <tr><td>Canada & Dubaï</td><td>~50 expéditions</td></tr>
-                <tr><td>Corridors actifs</td><td>4 (USA, Chine, UAE, Canada)</td></tr>
-                <tr><td>Statut</td><td>🟢 En cours</td></tr>
+                <tr><td>Concepteur</td><td>Magatte Samaké</td></tr>
               </table>
             </div>
           </div>
@@ -626,23 +611,23 @@
         <div class="project-card mfenergy">
           <div class="project-content">
             <div class="project-header">
-              <h3 class="project-title">MF Energies — Case Study</h3>
-              <span class="tag tag-green">Pétrole & Distribution</span>
+              <h3 class="project-title">MF Energy — Case Study Analytics Supply Chain</h3>
+              <span class="tag tag-green">Distribution Pétrolière</span>
             </div>
-            <p class="project-subtitle">Modélisation du réapprovisionnement et suivi des stocks d'un réseau de stations-service (cas simulé).</p>
+            <p class="project-subtitle">Démonstration de l'analyse de données appliquée au réapprovisionnement et au maintien des stocks d'un réseau de stations-service.</p>
 
             <ul class="project-details-list">
-              <li><strong>Objectif :</strong> anticiper les besoins en carburant du réseau pour prévenir les ruptures sans surstocker.</li>
-              <li><strong>Préparation (Excel) :</strong> structuration des données stations, stocks, consommation et livraisons.</li>
-              <li><strong>Transformation (Power Query) :</strong> nettoyage et contrôle qualité des 4 jeux de données.</li>
-              <li><strong>Visualisation (Power BI) :</strong> dashboard interactif de pilotage des stocks et des priorités de réapprovisionnement.</li>
+              <li><strong>Problématique Métier :</strong> Déterminer les priorités de réapprovisionnement afin d'éviter la rupture de stock tout en éliminant les coûts de surstockage.</li>
+              <li><strong>Data Preparation (Excel) :</strong> Structuration des 4 jeux de données clés (Master Data Stations, Stocks, Consommations et Livraisons).</li>
+              <li><strong>Transformation (Power Query) :</strong> Nettoyage, contrôle d'incohérences et préparation des modèles de données.</li>
+              <li><strong>Visualisation & Pilotage (Power BI) :</strong> Modélisation d'un dashboard interactif pour analyser les habitudes de consommation, évaluer la performance de livraison et cibler les stations prioritaires.</li>
             </ul>
 
             <div class="tech-stack">
               <span class="tech-badge">Power BI</span>
               <span class="tech-badge">Power Query</span>
-              <span class="tech-badge">Excel</span>
-              <span class="tech-badge">Logistique pétrolière</span>
+              <span class="tech-badge">Excel Avancé</span>
+              <span class="tech-badge">Inventory Management</span>
             </div>
           </div>
 
@@ -653,18 +638,66 @@
               </div>
               <div class="ui-stats-grid">
                 <div class="ui-stat-card">
-                  <div class="ui-stat-label">Jeux de données</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">4 sources</div>
+                  <div class="ui-stat-label">Sources de Données</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">4 Datasets Intégrés</div>
                 </div>
                 <div class="ui-stat-card">
-                  <div class="ui-stat-label">Période</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Janvier 2026</div>
+                  <div class="ui-stat-label">Rupture de Stock</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Anticipée</div>
                 </div>
               </div>
               <table class="info-table">
-                <tr><td>Secteur</td><td>Distribution de carburant</td></tr>
-                <tr><td>Portée</td><td>Stocks & réapprovisionnement</td></tr>
-                <tr><td>Statut</td><td>🟢 Terminé</td></tr>
+                <tr><td>Secteur</td><td>Pétrole & Énergie</td></tr>
+                <tr><td>Objectif</td><td>Optimisation des réapprovisionnements</td></tr>
+                <tr><td>Statut</td><td>🟢 Terminé (Janvier 2026)</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- GESTION DES EXPÉDITIONS & LOGISTIQUE OPÉRATIONNELLE (Bleu) -->
+        <div class="project-card shopmeaway">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Coordination des Expéditions Internationales</h3>
+              <span class="tag tag-blue">Réalisations Opérationnelles</span>
+            </div>
+            <p class="project-subtitle">Pilotage d'expéditions de bout en bout en groupage (LCL) et hors groupage (FCL / Direct) sur 4 corridors stratégiques.</p>
+
+            <ul class="project-details-list">
+              <li><strong>Flux Internationaux :</strong> Coordination complète des expéditions vers/depuis les États-Unis, la Chine, les Émirats Arabes Unis et le Canada.</li>
+              <li><strong>Typologie de Fret :</strong> Gestion des expéditions en groupage et conteneurs/lots complets avec vérification documentaire et conformité douanière.</li>
+              <li><strong>Procurement & Cotations Fret :</strong> Sollicitation et évaluation continue des prestataires (transporteurs, transitaires) selon la matrice coût/délai/fiabilité.</li>
+              <li><strong>Partenariats & Déploiement :</strong> Pilotage de l'accord opérationnel avec La Poste Sénégal, gestion des escalades IT et formation des équipes terrain à la plateforme SAWA.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-badge">Groupage / Hors Groupage</span>
+              <span class="tech-badge">4 Corridors Internationaux</span>
+              <span class="tech-badge">Cotations Fret B2B</span>
+              <span class="tech-badge">Plateforme SAWA</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Corridors Majeurs</div>
+                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">USA, Chine, EAU, CA</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Modes de Transport</div>
+                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">Air & Mer</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Partenaire Institutionnel</td><td>La Poste Sénégal</td></tr>
+                <tr><td>Gestion d'Incidents</td><td>Resolution de bout en bout</td></tr>
+                <tr><td>Évaluation Prestataires</td><td>Continue (Qualité/Délai)</td></tr>
               </table>
             </div>
           </div>
@@ -699,36 +732,36 @@
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-role">Assistante Logistique</div>
-          <div class="timeline-company">WMS Oil SA — Secteur pétrolier</div>
+          <div class="timeline-role">Assistante Logistique Pétrolière</div>
+          <div class="timeline-company">WMS Oil SA</div>
           <div class="timeline-date">Mars 2021</div>
         </div>
       </section>
 
       <!-- Compétences & Outils -->
       <section id="competences" class="info-box">
-        <h3>🛠️ Compétences & Outils</h3>
+        <h3>🛠️ Compétences & Expertise Supply Chain</h3>
 
         <table class="info-table">
           <tr>
-            <td>Data & dashboard</td>
-            <td>Power BI, Power Query, Excel avancé, Google Sheets, Apps Script</td>
+            <td>Systèmes & Analytics</td>
+            <td>Power BI, Power Query, Excel Avancé, Google Sheets, Apps Script, Platform SAWA</td>
           </tr>
           <tr>
-            <td>Logistique</td>
-            <td>Coordination multi-origines (USA, Chine, UAE, Canada), fret international, cotations fret, matières dangereuses</td>
+            <td>Opérations Logistiques</td>
+            <td>Groupage & hors groupage, cotations fret B2B, logistique carburant (chargements citernes, stocks), traçabilité des flux</td>
           </tr>
           <tr>
-            <td>Achats & carburant</td>
-            <td>Sourcing fournisseurs, bons de commande, logistique carburant (stocks, chargement)</td>
+            <td>Procurement & Achats</td>
+            <td>Sourcing, évaluation fournisseurs/transporteurs, gestion des bons de commande, dépouillement d'appels d'offres</td>
           </tr>
           <tr>
-            <td>Diplômes</td>
+            <td>Formation</td>
             <td>Master Supply Chain Management & Licence BBA Transports/Logistique (IAM Dakar)</td>
           </tr>
           <tr>
             <td>Langues</td>
-            <td>Français (bilingue), Anglais (professionnel), Wolof (langue maternelle)</td>
+            <td>Français (Bilingue), Anglais (Professionnel), Wolof (Langue maternelle)</td>
           </tr>
         </table>
       </section>
@@ -737,7 +770,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Magatte Samaké — Supply Chain & Data Portfolio</p>
+      <p>© 2026 Magatte Samaké — Supply Chain Operations & Digitalization</p>
     </footer>
 
   </div>
