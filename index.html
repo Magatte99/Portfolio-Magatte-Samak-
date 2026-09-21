@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magatte SAMAKE — Portfolio Supply Chain & Data</title>
+  <title>Magatte SAMAKE | Portfolio Supply Chain & Data</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -40,7 +40,6 @@
       padding-bottom: 60px;
     }
 
-    /* Navigation Header */
     header {
       position: sticky;
       top: 0;
@@ -101,14 +100,12 @@
       border-radius: 50%;
     }
 
-    /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Hero Section */
     .hero {
       padding: 4rem 0 2.5rem 0;
     }
@@ -174,7 +171,6 @@
       background-color: #334155;
     }
 
-    /* Stats bar */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -215,7 +211,6 @@
       margin-top: 0.25rem;
     }
 
-    /* Section Title */
     .section-title {
       font-size: 1.6rem;
       font-weight: 700;
@@ -225,14 +220,12 @@
       gap: 0.75rem;
     }
 
-    /* Grid Layout */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
     }
 
-    /* Project Cards */
     .project-card {
       background-color: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -329,6 +322,7 @@
     }
 
     .chainpilot .sub-section-title { color: var(--accent-purple-light); }
+    .mfenergy .sub-section-title { color: var(--accent-green-light); }
 
     .project-details-list {
       list-style: none;
@@ -353,6 +347,15 @@
     .shopmeaway .project-details-list li::before { color: var(--accent-blue); }
     .mfenergy .project-details-list li::before { color: var(--accent-green); }
 
+    .limitation-note {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-style: italic;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
@@ -369,7 +372,6 @@
       font-size: 0.8rem;
     }
 
-    /* UI Mock Blocks */
     .project-preview {
       background: #090d16;
       padding: 1.5rem;
@@ -436,7 +438,6 @@
     .info-table tr:last-child td { border-bottom: none; }
     .info-table td:first-child { font-weight: 600; color: var(--text-primary); }
 
-    /* Tables & Timeline */
     .two-cols {
       display: grid;
       grid-template-columns: 1fr;
@@ -471,6 +472,12 @@
     .timeline-role { font-weight: 600; font-size: 0.95rem; }
     .timeline-company { color: var(--accent-blue); font-size: 0.85rem; }
     .timeline-date { color: var(--text-secondary); font-size: 0.75rem; }
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      line-height: 1.55;
+    }
 
     footer {
       text-align: center;
@@ -480,6 +487,41 @@
       border-top: 1px solid var(--card-border);
       margin-top: 4rem;
     }
+
+
+
+    .project-screenshot {
+      grid-column: 1 / -1;
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+
+    .project-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .project-link-btn:hover { background: rgba(15, 23, 42, 0.9); }
+    .chainpilot .project-link-btn:hover { border-color: var(--accent-purple); color: var(--accent-purple-light); }
+    .mfenergy .project-link-btn:hover { border-color: var(--accent-green); color: var(--accent-green-light); }
 
     @media (max-width: 480px) {
       .hero-title { font-size: 2.1rem; }
@@ -544,7 +586,7 @@
 
     <!-- Projets Phares -->
     <section id="projets">
-      <h2 class="section-title">🚀 Projets & Solutions Digitales Supply Chain</h2>
+      <h2 class="section-title">Projets & Solutions Digitales Supply Chain</h2>
 
       <div class="projects-grid">
 
@@ -552,13 +594,13 @@
         <div class="project-card chainpilot">
           <div class="project-content">
             <div class="project-header">
-              <h3 class="project-title">Écosystème ChainPilot — Decision & Automation Suite</h3>
+              <h3 class="project-title">Écosystème ChainPilot : Decision & Automation Suite</h3>
               <span class="tag tag-purple">v1.0 (Fév 2026)</span>
             </div>
             <p class="project-subtitle">Suite d'outils digitaux conçue pour centraliser, automatiser et piloter l'ensemble des flux opérationnels Supply Chain.</p>
 
             <div class="sub-section-box">
-              <div class="sub-section-title">1. ChainPilot — Supply Command Center</div>
+              <div class="sub-section-title">1. ChainPilot : Supply Command Center</div>
               <ul class="project-details-list">
                 <li><strong>Vue d'ensemble opérationnelle :</strong> Pilotage quotidien des flux logistiques, des expéditions et analyse comparative de la performance des transporteurs.</li>
                 <li><strong>Gestion dynamique des stocks :</strong> Définition des seuils d'alerte, suivi des niveaux actifs et anticipation des réapprovisionnements.</li>
@@ -567,7 +609,7 @@
             </div>
 
             <div class="sub-section-box">
-              <div class="sub-section-title">2. ChainPilot — Order & Invoice Tracker</div>
+              <div class="sub-section-title">2. ChainPilot : Order & Invoice Tracker</div>
               <ul class="project-details-list">
                 <li><strong>Traçabilité des commandes :</strong> Centralisation du cycle complet de la commande client jusqu'à la livraison finale.</li>
                 <li><strong>Fiabilisation du workflow comptable :</strong> Automatisation de la numérotation des factures et élimination des erreurs de saisie ou des saut de lignes.</li>
@@ -580,6 +622,10 @@
               <span class="tech-badge">Apps Script / Automation</span>
               <span class="tech-badge">Contrôle de Stocks</span>
               <span class="tech-badge">Workflow Facturation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://docs.google.com/spreadsheets/d/12i99mjhOv_8QpjhaZyiOgucJppRdunUl/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn">Voir le Command Center →</a>
+              <a href="https://docs.google.com/spreadsheets/d/1Zf0H0b1RaVkCfsnM14OYSmExc-VM0xc2cLm_57k_OLw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn">Voir l'Order & Invoice Tracker →</a>
             </div>
           </div>
 
@@ -609,9 +655,10 @@
 
         <!-- MF ENERGIES (Vert) -->
         <div class="project-card mfenergy">
+          <img class="project-screenshot" src="mf-energies-dashboard.png" alt="Dashboard Power BI MF Energies : KPI de stock, évolution par produit, consommation et statut des livraisons">
           <div class="project-content">
             <div class="project-header">
-              <h3 class="project-title">MF Energy — Case Study Analytics Supply Chain</h3>
+              <h3 class="project-title">MF Energy : Case Study Analytics Supply Chain</h3>
               <span class="tag tag-green">Distribution Pétrolière</span>
             </div>
             <p class="project-subtitle">Démonstration de l'analyse de données appliquée au réapprovisionnement et au maintien des stocks d'un réseau de stations-service.</p>
@@ -623,11 +670,24 @@
               <li><strong>Visualisation & Pilotage (Power BI) :</strong> Modélisation d'un dashboard interactif pour analyser les habitudes de consommation, évaluer la performance de livraison et cibler les stations prioritaires.</li>
             </ul>
 
+            <div class="sub-section-box">
+              <div class="sub-section-title">Key Findings & Insights</div>
+              <ul class="project-details-list">
+                <li><strong>Gasoil, point de tension principal :</strong> 335 000 L consommés sur la période, soit 34% de plus que l'Essence et plus du double du Super. Seul produit en alerte de réapprovisionnement sur les 5 stations simultanément.</li>
+                <li><strong>ST004 et ST005 :</strong> cumulent forte consommation de Gasoil et retard de livraison sur ce même produit. Les transporteurs opérant bien dans leur zone assignée, la cause est à chercher ailleurs que la couverture géographique.</li>
+                <li><strong>ST001 :</strong> seule station à nécessiter un double réapprovisionnement (Essence et Gasoil simultanément), contre un seul produit pour les 4 autres.</li>
+              </ul>
+              <div class="limitation-note">Limite : cette analyse identifie quels produits/stations sont sous tension, mais pas encore à quelle vitesse le problème progresse. Un calcul de taux de rotation et de couverture est prévu pour un prochain projet.</div>
+            </div>
+
             <div class="tech-stack">
               <span class="tech-badge">Power BI</span>
               <span class="tech-badge">Power Query</span>
               <span class="tech-badge">Excel Avancé</span>
               <span class="tech-badge">Inventory Management</span>
+            </div>
+            <div class="project-links">
+              <a href="https://docs.google.com/spreadsheets/d/1ZwJDkvoUxOF5N7Y5c36gd8UfVPOfZJOS/edit?gid=1852011064#gid=1852011064" target="_blank" rel="noopener noreferrer" class="project-link-btn">Voir les données (Excel) →</a>
             </div>
           </div>
 
@@ -642,14 +702,14 @@
                   <div class="ui-stat-val" style="color: var(--accent-green-light);">4 Datasets Intégrés</div>
                 </div>
                 <div class="ui-stat-card">
-                  <div class="ui-stat-label">Rupture de Stock</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Anticipée</div>
+                  <div class="ui-stat-label">Points Critiques</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Identifiés</div>
                 </div>
               </div>
               <table class="info-table">
                 <tr><td>Secteur</td><td>Pétrole & Énergie</td></tr>
                 <tr><td>Objectif</td><td>Optimisation des réapprovisionnements</td></tr>
-                <tr><td>Statut</td><td>🟢 Terminé (Janvier 2026)</td></tr>
+                <tr><td>Statut</td><td>Mis à jour : Sept. 2026</td></tr>
               </table>
             </div>
           </div>
@@ -711,36 +771,40 @@
 
       <!-- Expériences -->
       <section id="parcours" class="info-box">
-        <h3>💼 Parcours Professionnel</h3>
+        <h3>Parcours Professionnel</h3>
 
         <div class="timeline-item">
           <div class="timeline-role">Coordinatrice Logistique & Supply Chain</div>
           <div class="timeline-company">Shopmeaway</div>
-          <div class="timeline-date">Juin 2023 — Présent</div>
+          <div class="timeline-date">Juin 2023 - Présent</div>
+          <div class="timeline-desc">Pilotage d'expéditions internationales sur 4 corridors (États-Unis, Chine, Émirats Arabes Unis, Canada) : suivi bout-en-bout des délais, gestion des incidents, sélection et évaluation continue des prestataires de transport. Coordination du partenariat opérationnel avec La Poste Sénégal. En charge de la gestion courante de la plateforme SAWA : onboarding des nouveaux utilisateurs et accompagnement continu des équipes terrain (hors volet technique).</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-role">Assistante Achats (Procurement Assistant)</div>
           <div class="timeline-company">TP (anciennement Majorel)</div>
-          <div class="timeline-date">Sept 2022 — Fév 2023</div>
+          <div class="timeline-date">Sept 2022 - Fév 2023</div>
+          <div class="timeline-desc">Gestion simultanée des besoins d'achat de plusieurs départements, de la demande jusqu'à la réception. Présélection de fournisseurs, participation à des appels d'offres et analyse comparative des offres.</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-role">Assistante Achats & Supply Chain</div>
           <div class="timeline-company">Cabinet Carrée</div>
-          <div class="timeline-date">Sept — Déc 2021</div>
+          <div class="timeline-date">Sept - Déc 2021</div>
+          <div class="timeline-desc">Sélection et évaluation de fournisseurs selon coût, qualité et capacité de production. Participation aux négociations fournisseurs et suivi des commandes, avec résolution des écarts de quantité, qualité et délai.</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-role">Assistante Logistique Pétrolière</div>
           <div class="timeline-company">WMS Oil SA</div>
-          <div class="timeline-date">Mars 2021</div>
+          <div class="timeline-date">Mars 2021 (Secteur pétrolier)</div>
+          <div class="timeline-desc">Suivi quotidien des niveaux de carburant et des stocks en dépôt, planification des chargements de camions-citernes selon les priorités opérationnelles, coordination des livraisons avec fournisseurs et transporteurs.</div>
         </div>
       </section>
 
       <!-- Compétences & Outils -->
       <section id="competences" class="info-box">
-        <h3>🛠️ Compétences & Expertise Supply Chain</h3>
+        <h3>Compétences & Expertise Supply Chain</h3>
 
         <table class="info-table">
           <tr>
@@ -770,7 +834,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Magatte Samaké — Supply Chain Operations & Digitalization</p>
+      <p>© 2026 Magatte Samaké | Supply Chain Operations & Digitalization</p>
     </footer>
 
   </div>
