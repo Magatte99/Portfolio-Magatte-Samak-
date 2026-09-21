@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magatte SAMAKE | Supply Chain & Data Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+
+      --accent-purple: #a855f7;
+      --accent-purple-light: #c084fc;
+      --accent-purple-bg: rgba(168, 85, 247, 0.1);
+
+      --accent-blue: #38bdf8;
+      --accent-blue-light: #7dd3fc;
+      --accent-blue-bg: rgba(56, 189, 248, 0.1);
+
+      --accent-green: #22c55e;
+      --accent-green-light: #4ade80;
+      --accent-green-bg: rgba(34, 197, 94, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-blue);
+    }
+
+    .lang-switch {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+      padding: 0.35rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .lang-switch:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue-light);
+    }
+
+    .status-badge {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--accent-green);
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      padding: 4rem 0 2.5rem 0;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent-purple-light);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      max-width: 780px;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-purple);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #9333ea;
+    }
+
+    .btn-secondary {
+      background-color: var(--card-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #334155;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .stat-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border-top: 3px solid var(--accent-purple);
+    }
+
+    .stat-card:nth-child(2) { border-top-color: var(--accent-blue); }
+    .stat-card:nth-child(3) { border-top-color: var(--accent-green); }
+    .stat-card:nth-child(4) { border-top-color: var(--accent-purple); }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-card:nth-child(1) .stat-value { color: var(--accent-purple-light); }
+    .stat-card:nth-child(2) .stat-value { color: var(--accent-blue-light); }
+    .stat-card:nth-child(3) .stat-value { color: var(--accent-green-light); }
+    .stat-card:nth-child(4) .stat-value { color: var(--accent-purple-light); }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 3rem 0 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    @media (min-width: 768px) {
+      .project-card {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .project-card:hover {
+      border-color: #475569;
+    }
+
+    .project-card.chainpilot { border-top: 4px solid var(--accent-purple); }
+    .project-card.shopmeaway { border-top: 4px solid var(--accent-blue); }
+    .project-card.mfenergy { border-top: 4px solid var(--accent-green); }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .chainpilot .project-title { color: var(--accent-purple-light); }
+    .shopmeaway .project-title { color: var(--accent-blue-light); }
+    .mfenergy .project-title { color: var(--accent-green-light); }
+
+    .tag {
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .tag-purple {
+      background-color: var(--accent-purple-bg);
+      color: var(--accent-purple-light);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    .tag-blue {
+      background-color: var(--accent-blue-bg);
+      color: var(--accent-blue-light);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .tag-green {
+      background-color: var(--accent-green-bg);
+      color: var(--accent-green-light);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .project-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .sub-section-box {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .sub-section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .chainpilot .sub-section-title { color: var(--accent-purple-light); }
+    .mfenergy .sub-section-title { color: var(--accent-green-light); }
+
+    .project-details-list {
+      list-style: none;
+    }
+
+    .project-details-list li {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .project-details-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .chainpilot .project-details-list li::before { color: var(--accent-purple); }
+    .shopmeaway .project-details-list li::before { color: var(--accent-blue); }
+    .mfenergy .project-details-list li::before { color: var(--accent-green); }
+
+    .limitation-note {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-style: italic;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-badge {
+      background-color: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .project-preview {
+      background: #090d16;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--card-border);
+    }
+
+    .ui-mockup {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .ui-header {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .ui-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #334155;
+    }
+
+    .ui-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .ui-stat-card {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .chainpilot .ui-stat-card { border-left: 3px solid var(--accent-purple); }
+    .shopmeaway .ui-stat-card { border-left: 3px solid var(--accent-blue); }
+    .mfenergy .ui-stat-card { border-left: 3px solid var(--accent-green); }
+
+    .ui-stat-label { font-size: 0.7rem; color: var(--text-secondary); }
+    .ui-stat-val { font-size: 1.05rem; font-weight: 700; margin-top: 2px; }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .info-table td {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--card-border);
+      color: var(--text-secondary);
+    }
+
+    .info-table tr:last-child td { border-bottom: none; }
+    .info-table td:first-child { font-weight: 600; color: var(--text-primary); }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .two-cols { grid-template-columns: 1fr 1fr; }
+    }
+
+    .info-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .info-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.25rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-role { font-weight: 600; font-size: 0.95rem; }
+    .timeline-company { color: var(--accent-blue); font-size: 0.85rem; }
+    .timeline-date { color: var(--text-secondary); font-size: 0.75rem; }
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      line-height: 1.55;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0 1rem 0;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+      margin-top: 4rem;
+    }
+
+    .project-screenshot {
+      grid-column: 1 / -1;
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+
+    .project-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .project-link-btn:hover { background: rgba(15, 23, 42, 0.9); }
+    .chainpilot .project-link-btn:hover { border-color: var(--accent-purple); color: var(--accent-purple-light); }
+    .mfenergy .project-link-btn:hover { border-color: var(--accent-green); color: var(--accent-green-light); }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-logo">MAGATTE SAMAKE</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Supply Chain Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="index.html" class="lang-switch">🇫🇷 Version Française</a></li>
+    </ul>
+    <div class="status-badge">
+      <span class="status-dot"></span> Open to Opportunities
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 class="hero-title">Magatte SAMAKE</h1>
+      <div class="hero-subtitle">Supply Chain & Logistics Coordinator | Operational Analytics & Automation</div>
+      <p class="hero-description">
+        Specialist in international logistics coordination, procurement, and operational management. I design interactive dashboards and automated workflows to transform raw operational data into strategic decision-making tools.
+      </p>
+
+      <div class="btn-group">
+        <a href="https://www.linkedin.com/in/magatte-samake" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:magatte99@hotmail.fr" class="btn btn-secondary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          magatte99@hotmail.fr
+        </a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">4 Corridors</div>
+          <div class="stat-label">USA, China, UAE, Canada</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">LCL & FCL Cargo</div>
+          <div class="stat-label">Air Freight & Ocean Shipping</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">ChainPilot Suite</div>
+          <div class="stat-label">Command Center & Order/Invoice Tracker</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3+ Years</div>
+          <div class="stat-label">Procurement & Logistics Experience</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section id="projects">
+      <h2 class="section-title">Supply Chain Digital Solutions & Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- CHAINPILOT SUITE -->
+        <div class="project-card chainpilot">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">ChainPilot Suite: Decision & Automation Tools</h3>
+              <span class="tag tag-purple">v1.0 (Feb 2026)</span>
+            </div>
+            <p class="project-subtitle">A digital tool suite engineered to centralize, automate, and monitor end-to-end Supply Chain operational workflows.</p>
+
+            <div class="sub-section-box">
+              <div class="sub-section-title">1. ChainPilot: Supply Command Center</div>
+              <ul class="project-details-list">
+                <li><strong>Operational Oversight:</strong> Daily tracking of logistics flows, shipments, and comparative carrier performance benchmarking.</li>
+                <li><strong>Dynamic Inventory Management:</strong> Automated threshold alerts, active stock tracking, and replenishment planning.</li>
+                <li><strong>KPI Dashboard:</strong> Real-time visualization of SLA fulfillment, lead times, and processed throughput volumes.</li>
+              </ul>
+            </div>
+
+            <div class="sub-section-box">
+              <div class="sub-section-title">2. ChainPilot: Order & Invoice Tracker</div>
+              <ul class="project-details-list">
+                <li><strong>Order End-to-End Tracking:</strong> Complete lifecycle tracking from customer order creation to final delivery.</li>
+                <li><strong>Billing Workflow Standardization:</strong> Automated invoice numbering sequence eliminating manual errors and row-skipping issues.</li>
+                <li><strong>Financial Alignment:</strong> Order-to-invoice reconciliation reducing reporting and auditing turnaround time.</li>
+              </ul>
+            </div>
+
+            <div class="tech-stack">
+              <span class="tech-badge">Advanced Google Sheets</span>
+              <span class="tech-badge">Apps Script / Automation</span>
+              <span class="tech-badge">Inventory Control</span>
+              <span class="tech-badge">Billing Workflows</span>
+            </div>
+            <div class="project-links">
+              <a href="https://docs.google.com/spreadsheets/d/12i99mjhOv_8QpjhaZyiOgucJppRdunUl/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Command Center →</a>
+              <a href="https://docs.google.com/spreadsheets/d/1Zf0H0b1RaVkCfsnM14OYSmExc-VM0xc2cLm_57k_OLw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Order & Invoice Tracker →</a>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Cycle Tracking</div>
+                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">100% Integrated</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Data Accuracy</div>
+                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">Zero Duplicates</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Suite</td><td>ChainPilot Command & Tracker</td></tr>
+                <tr><td>Specialization</td><td>Supply Chain Operations</td></tr>
+                <tr><td>Designer</td><td>Magatte Samaké</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- MF ENERGY -->
+        <div class="project-card mfenergy">
+          <img class="project-screenshot" src="mf-energies-dashboard.png" alt="Power BI MF Energy Dashboard: Inventory KPIs, product trends, fuel consumption and delivery status">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">MF Energy: Supply Chain Analytics Case Study</h3>
+              <span class="tag tag-green">Downstream Oil Distribution</span>
+            </div>
+            <p class="project-subtitle">Applied data analytics case study evaluating retail station fuel replenishment and inventory optimization.</p>
+
+            <ul class="project-details-list">
+              <li><strong>Business Problem:</strong> Prioritize replenishment orders to prevent station stockouts while eliminating holding costs from overstocking.</li>
+              <li><strong>Data Preparation (Excel):</strong> Structuring 4 core operational datasets (Station Master Data, Inventory, Consumption, Deliveries).</li>
+              <li><strong>Data Transformation (Power Query):</strong> Data cleaning, anomaly checks, and data model relationship building.</li>
+              <li><strong>Visualization & Monitoring (Power BI):</strong> Interactive dashboard model analyzing consumption patterns, carrier delivery SLA performance, and critical replenishment alerts.</li>
+            </ul>
+
+            <div class="sub-section-box">
+              <div class="sub-section-title">Key Findings & Operational Insights</div>
+              <ul class="project-details-list">
+                <li><strong>Diesel (Gasoil) - Critical Bottleneck:</strong> 335,000 L consumed during the period (+34% vs Unleaded, 2x Super). Diesel was the only product simultaneously triggering replenishment alerts across all 5 stations.</li>
+                <li><strong>ST004 & ST005 Stations:</strong> Combined high Diesel consumption with recurring carrier delivery delays. Carrier route mapping confirmed issue was operational rather than geographic coverage.</li>
+                <li><strong>ST001 Station:</strong> The only retail site requiring dual replenishment (Unleaded + Diesel simultaneously).</li>
+              </ul>
+            </div>
+
+            <div class="tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">Power Query</span>
+              <span class="tech-badge">Advanced Excel</span>
+              <span class="tech-badge">Inventory Management</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://docs.google.com/spreadsheets/d/1ZwJDkvoUxOF5N7Y5c36gd8UfVPOfZJOS/edit?gid=1852011064#gid=1852011064" target="_blank" rel="noopener noreferrer" class="project-link-btn">View Datasets (Excel) →</a>
+              <a href="MF ENERGIES DASHBOARD.pbix" class="project-link-btn" download>Download Power BI Model (.pbix) →</a>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Data Sources</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">4 Integrated Datasets</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Critical Points</div>
+                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Identified</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Sector</td><td>Downstream Oil & Energy</td></tr>
+                <tr><td>Objective</td><td>Replenishment & Stock Optimization</td></tr>
+                <tr><td>Status</td><td>Updated: Sept 2026</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERNATIONAL SHIPPING & OPERATIONS -->
+        <div class="project-card shopmeaway">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">International Shipping & Logistics Coordination</h3>
+              <span class="tag tag-blue">Operational Milestones</span>
+            </div>
+            <p class="project-subtitle">End-to-end freight management across LCL consolidation and FCL direct shipments across 4 international trade corridors.</p>
+
+            <ul class="project-details-list">
+              <li><strong>International Trade Corridors:</strong> End-to-end shipment coordination across USA, China, UAE, and Canada.</li>
+              <li><strong>Freight Operations:</strong> Managing LCL consolidated cargo and full container/direct shipments with strict customs compliance and documentation verification.</li>
+              <li><strong>Freight Procurement:</strong> Carrier sourcing and continuous vendor evaluation based on cost, transit time, and SLA performance matrices.</li>
+              <li><strong>Strategic Partnerships:</strong> Operational management of La Poste Senegal partnership, platform escalation management, and field team training on the SAWA platform.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-badge">LCL & FCL Cargo</span>
+              <span class="tech-badge">4 Trade Corridors</span>
+              <span class="tech-badge">B2B Freight Procurement</span>
+              <span class="tech-badge">SAWA Platform</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="ui-mockup">
+              <div class="ui-header">
+                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+              </div>
+              <div class="ui-stats-grid">
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Key Corridors</div>
+                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">USA, China, UAE, CA</div>
+                </div>
+                <div class="ui-stat-card">
+                  <div class="ui-stat-label">Freight Modes</div>
+                  <div class="ui-stat-val" style="color: var(--accent-blue-light);">Air & Sea</div>
+                </div>
+              </div>
+              <table class="info-table">
+                <tr><td>Institutional Partner</td><td>La Poste Senegal</td></tr>
+                <tr><td>Incident Resolution</td><td>End-to-End Tracking</td></tr>
+                <tr><td>Vendor SLA Rating</td><td>Continuous Monitoring</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Professional Experience & Skills -->
+    <div class="two-cols">
+
+      <!-- Work Experience -->
+      <section id="experience" class="info-box">
+        <h3>Professional Experience</h3>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Logistics & Supply Chain Coordinator</div>
+          <div class="timeline-company">Shopmeaway</div>
+          <div class="timeline-date">June 2023 - Present</div>
+          <div class="timeline-desc">Coordinating international freight across 4 corridors (USA, China, UAE, Canada): end-to-end shipment tracking, incident escalation, and carrier evaluation. Managing operational execution for the La Poste Senegal agreement. Supervised SAWA platform onboarding and field team operations.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Procurement Assistant</div>
+          <div class="timeline-company">TP (formerly Majorel)</div>
+          <div class="timeline-date">Sept 2022 - Feb 2023</div>
+          <div class="timeline-desc">Handled cross-departmental purchasing requisitions from sourcing to receipt. Conducted vendor shortlisting, RFP support, and commercial offer comparisons.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Procurement & Supply Chain Assistant</div>
+          <div class="timeline-company">Cabinet Carrée</div>
+          <div class="timeline-date">Sept - Dec 2021</div>
+          <div class="timeline-desc">Evaluated suppliers based on cost, quality, and production capacity. Supported supplier negotiations and order tracking, resolving quantity, quality, and delay discrepancies.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Petroleum Logistics Assistant</div>
+          <div class="timeline-company">WMS Oil SA</div>
+          <div class="timeline-date">March 2021 (Oil & Gas Sector)</div>
+          <div class="timeline-desc">Monitored daily depot fuel levels, scheduled road tanker loading operations based on delivery priorities, and coordinated distribution with carriers and suppliers.</div>
+        </div>
+      </section>
+
+      <!-- Skills & Expertise -->
+      <section id="skills" class="info-box">
+        <h3>Skills & Supply Chain Expertise</h3>
+
+        <table class="info-table">
+          <tr>
+            <td>Systems & Analytics</td>
+            <td>Power BI, Power Query, Advanced Excel, Google Sheets, Apps Script, SAWA Platform</td>
+          </tr>
+          <tr>
+            <td>Logistics Operations</td>
+            <td>LCL & FCL Shipping, B2B Freight Procurement, Fuel Distribution Logistics, Supply Chain Traceability</td>
+          </tr>
+          <tr>
+            <td>Procurement</td>
+            <td>Sourcing, Carrier/Supplier SLA Rating, Purchase Order Lifecycle, RFP Evaluation</td>
+          </tr>
+          <tr>
+            <td>Education</td>
+            <td>Master's in Supply Chain Management & BBA in Transport & Logistics (IAM Dakar)</td>
+          </tr>
+          <tr>
+            <td>Languages</td>
+            <td>French (Bilingual), English (Professional Working Proficiency), Wolof (Native)</td>
+          </tr>
+        </table>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Magatte Samaké | Supply Chain Operations & Digitalization</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
