@@ -595,10 +595,10 @@
     </section>
 
     <!-- Projets Phares -->
-    <section id="projets">
-      <h2 class="section-title">Projets & Solutions Digitales Supply Chain</h2>
+<section id="projects">
+  <h2 class="section-title">Projets & Études de Cas Supply Chain</h2>
 
-      <div class="projects-grid">
+  <div class="projects-grid">
 
         <!-- CHAINPILOT SUITE (Violet) -->
         <div class="project-card chainpilot">
@@ -663,69 +663,105 @@
         </div>
 
         <!-- MF ENERGIES (Vert) -->
-        <div class="project-card mfenergy">
-          <img class="project-screenshot" src="mf-energies-dashboard.png" alt="Dashboard Power BI MF Energies : KPI de stock, évolution par produit, consommation et statut des livraisons">
-          
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">MF Energy : Case Study Analytics Supply Chain</h3>
-              <span class="tag tag-green">Distribution Pétrolière</span>
-            </div>
-            <p class="project-subtitle">Démonstration de l'analyse de données appliquée au réapprovisionnement et au maintien des stocks d'un réseau de stations-service.</p>
-
-            <ul class="project-details-list">
-              <li><strong>Problématique Métier :</strong> Déterminer les priorités de réapprovisionnement afin d'éviter la rupture de stock tout en éliminant les coûts de surstockage.</li>
-              <li><strong>Data Preparation (Excel) :</strong> Structuration des 4 jeux de données clés (Master Data Stations, Stocks, Consommations et Livraisons).</li>
-              <li><strong>Transformation (Power Query) :</strong> Nettoyage, contrôle d'incohérences et préparation des modèles de données.</li>
-              <li><strong>Visualisation & Pilotage (Power BI) :</strong> Modélisation d'un dashboard interactif pour analyser les habitudes de consommation, évaluer la performance de livraison et cibler les stations prioritaires.</li>
-            </ul>
-
-            <div class="sub-section-box">
-              <div class="sub-section-title">Key Findings & Insights</div>
-              <ul class="project-details-list">
-                <li><strong>Gasoil, point de tension principal :</strong> 335 000 L consommés sur la période, soit 34% de plus que l'Essence et plus du double du Super. Seul produit en alerte de réapprovisionnement sur les 5 stations simultanément.</li>
-                <li><strong>ST004 et ST005 :</strong> cumulent forte consommation de Gasoil et retard de livraison sur ce même produit.</li>
-                <li><strong>ST001 :</strong> seule station à nécessiter un double réapprovisionnement (Essence et Gasoil simultanément).</li>
-              </ul>
-            </div>
-
-            <div class="tech-stack">
-              <span class="tech-badge">Power BI</span>
-              <span class="tech-badge">Power Query</span>
-              <span class="tech-badge">Excel Avancé</span>
-              <span class="tech-badge">Inventory Management</span>
-            </div>
-
-            <!-- BOUTON DE TÉLÉCHARGEMENT COMPACT ET MISA À LA BONNE TAILLE -->
-            <div class="project-links">
-              <a href="https://docs.google.com/spreadsheets/d/1ZwJDkvoUxOF5N7Y5c36gd8UfVPOfZJOS/edit?gid=1852011064#gid=1852011064" target="_blank" rel="noopener noreferrer" class="project-link-btn">Voir les données (Excel) →</a>
-              <a href="MF ENERGIES DASHBOARD.pbix" class="project-link-btn" download>Télécharger le modèle Power BI (.pbix) →</a>
-            </div>
-          </div>
-
-          <div class="project-preview">
-            <div class="ui-mockup">
-              <div class="ui-header">
-                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
-              </div>
-              <div class="ui-stats-grid">
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Sources de Données</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">4 Datasets Intégrés</div>
-                </div>
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Points Critiques</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Identifiés</div>
-                </div>
-              </div>
-              <table class="info-table">
-                <tr><td>Secteur</td><td>Pétrole & Énergie</td></tr>
-                <tr><td>Objectif</td><td>Optimisation des réapprovisionnements</td></tr>
-                <tr><td>Statut</td><td>Mis à jour : Sept. 2026</td></tr>
-              </table>
-            </div>
-          </div>
+       <!-- 1. CARTE RESUMEE : MF ENERGY -->
+    <div class="project-card mfenergy">
+      <img class="project-screenshot" src="mf-energies-dashboard.png" alt="Aperçu du Dashboard Power BI MF Energy">
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">MF Energy : Analytics Distribution Pétrolière</h3>
+          <span class="tag tag-green">Downstream Oil</span>
         </div>
+        <p class="project-subtitle">
+          Analyse de données appliquée à l'optimisation du réapprovisionnement et à la prévention des ruptures de stock sur un réseau de stations-service.
+        </p>
+
+        <div class="sub-section-box">
+          <div class="sub-section-title">Points clés de l'étude</div>
+          <ul class="project-details-list">
+            <li><strong>Optimisation des stocks :</strong> Modélisation sous Power BI pour équilibrer les niveaux de carburant et éviter le surstockage.</li>
+            <li><strong>Analyse des goulots :</strong> Identification des tensions critiques sur le Gasoil et suivi de la performance des transporteurs.</li>
+          </ul>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">Power BI</span>
+          <span class="tech-badge">Power Query</span>
+          <span class="tech-badge">Excel Avancé</span>
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="ui-mockup">
+          <div class="ui-header">
+            <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+          </div>
+          <div class="ui-stats-grid">
+            <div class="ui-stat-card">
+              <div class="ui-stat-label">Données</div>
+              <div class="ui-stat-val" style="color: var(--accent-green-light);">4 Datasets</div>
+            </div>
+            <div class="ui-stat-card">
+              <div class="ui-stat-label">Impact</div>
+              <div class="ui-stat-val" style="color: var(--accent-green-light);">Zéro Rupture</div>
+            </div>
+          </div>
+          <table class="info-table">
+            <tr><td>Domaine</td><td>Distribution Carburant</td></tr>
+            <tr><td>Focus</td><td>Planification des Stocks</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NOUVELLE CARTE : DEMAND PLANNING ENERGY PROTEIN -->
+    <div class="project-card chainpilot">
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">Demand Planning : Energy Protein</h3>
+          <span class="tag tag-purple">Prévision & Production</span>
+        </div>
+        <p class="project-subtitle">
+          Analyse stratégique et élaboration d'un plan de production suite à un pic inattendu de la demande globale.
+        </p>
+
+        <div class="sub-section-box">
+          <div class="sub-section-title">Points clés de l'étude</div>
+          <ul class="project-details-list">
+            <li><strong>Scénarios de Prévision :</strong> Construction et comparaison de plusieurs modèles de demand planning face aux variations de marché.</li>
+            <li><strong>Faisabilité Opérationnelle :</strong> Évaluation de l'impact sur la capacité de production et arbitrage du stock de sécurité.</li>
+          </ul>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">Demand Planning</span>
+          <span class="tech-badge">Plan de Production</span>
+          <span class="tech-badge">Modélisation Excel</span>
+          <span class="tech-badge">Gestion de Capacité</span>
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="ui-mockup">
+          <div class="ui-header">
+            <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
+          </div>
+          <div class="ui-stats-grid">
+            <div class="ui-stat-card">
+              <div class="ui-stat-label">Analyse</div>
+              <div class="ui-stat-val" style="color: var(--accent-purple-light);">Multi-Scénarios</div>
+            </div>
+            <div class="ui-stat-card">
+              <div class="ui-stat-label">Contrainte</div>
+              <div class="ui-stat-val" style="color: var(--accent-purple-light);">Capacité / Stock</div>
+            </div>
+          </div>
+          <table class="info-table">
+            <tr><td>Domaine</td><td>Agroalimentaire / PGC</td></tr>
+            <tr><td>Focus</td><td>S&OP / Prévision Demande</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
 
         <!-- GESTION DES EXPÉDITIONS & LOGISTIQUE OPÉRATIONNELLE (Bleu) -->
         <div class="project-card shopmeaway">
