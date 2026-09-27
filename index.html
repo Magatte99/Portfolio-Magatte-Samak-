@@ -180,6 +180,16 @@
       background-color: #334155;
     }
 
+    .btn-cv {
+      background-color: rgba(56, 189, 248, 0.15);
+      color: var(--accent-blue-light);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-cv:hover {
+      background-color: rgba(56, 189, 248, 0.25);
+    }
+
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -437,6 +447,32 @@
     .info-table tr:last-child td { border-bottom: none; }
     .info-table td:first-child { font-weight: 600; color: var(--text-primary); }
 
+    /* Layout en 2 colonnes côte à côte pour les études de cas */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .cases-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .compact-card {
+      grid-template-columns: 1fr !important;
+      height: 100%;
+    }
+
+    .compact-card .project-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
     .two-cols {
       display: grid;
       grid-template-columns: 1fr;
@@ -509,7 +545,7 @@
       border: 1px solid var(--card-border);
       border-radius: 16px;
       padding: 2rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -559,6 +595,11 @@
       </p>
 
       <div class="btn-group">
+        <!-- Bouton Télécharger le CV -->
+        <a href="https://drive.google.com/file/d/1xr4tcnnLgdo9b4TFFga1F9Gs_KukSSpM/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-cv">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Télécharger mon CV
+        </a>
         <a href="https://www.linkedin.com/in/magattesamaké/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg>
           LinkedIn
@@ -589,9 +630,9 @@
       </div>
     </section>
 
-    <!-- Projets Phares & Aperçu des Études de Cas -->
+    <!-- Projets Phares -->
     <section id="projects">
-      <h2 class="section-title">Projets & Aperçu des Études de Cas</h2>
+      <h2 class="section-title">Projets & Automatisations Supply Chain</h2>
 
       <div class="projects-grid">
 
@@ -655,109 +696,7 @@
           </div>
         </div>
 
-        <!-- 2. CARTE RESUMEE COMPACTE : MF ENERGY (Vert) -->
-        <div class="project-card mfenergy">
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">MF Energy : Analytics Distribution Pétrolière</h3>
-              <span class="tag tag-green">Downstream Oil</span>
-            </div>
-            <p class="project-subtitle">Démonstration de l'analyse de données appliquée au réapprovisionnement et au maintien des stocks d'un réseau de stations-service.</p>
-
-            <div class="sub-section-box">
-              <div class="sub-section-title">Aperçu de l'étude</div>
-              <ul class="project-details-list">
-                <li>Modélisation sous Power BI pour équilibrer les niveaux de carburant et éviter le surstockage.</li>
-                <li>Identification des tensions critiques sur le Gasoil et suivi de la performance des transporteurs.</li>
-              </ul>
-            </div>
-
-            <div class="tech-stack">
-              <span class="tech-badge">Power BI</span>
-              <span class="tech-badge">Power Query</span>
-              <span class="tech-badge">Excel Avancé</span>
-            </div>
-
-            <div class="project-links">
-              <a href="case-studies.html#mf-energy" class="project-link-btn" style="border-color: var(--accent-green); color: var(--accent-green-light);">Consulter l'étude détaillée →</a>
-            </div>
-          </div>
-
-          <div class="project-preview">
-            <div class="ui-mockup">
-              <div class="ui-header">
-                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
-              </div>
-              <div class="ui-stats-grid">
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Données</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">4 Datasets</div>
-                </div>
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Impact</div>
-                  <div class="ui-stat-val" style="color: var(--accent-green-light);">Zéro Rupture</div>
-                </div>
-              </div>
-              <table class="info-table">
-                <tr><td>Domaine</td><td>Distribution Carburant</td></tr>
-                <tr><td>Focus</td><td>Planification des Stocks</td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. CARTE RESUMEE COMPACTE : DEMAND PLANNING ENERGY PROTEIN (Violet) -->
-        <div class="project-card chainpilot">
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">Demand Planning : Energy Protein</h3>
-              <span class="tag tag-purple">Prévision & Production</span>
-            </div>
-            <p class="project-subtitle">Analyse et mise en place d’un plan de production à la suite d’une hausse inattendue de la demande globale.</p>
-
-            <div class="sub-section-box">
-              <div class="sub-section-title">Aperçu de l'étude</div>
-              <ul class="project-details-list">
-                <li>Évaluation de l'évolution de la demande suite au lancement viral d'une nouvelle saveur (Fraise).</li>
-                <li>Construction de scénarios de prévision et arbitrage sous contrainte de capacité (900 unités/mois) et stock de sécurité.</li>
-              </ul>
-            </div>
-
-            <div class="tech-stack">
-              <span class="tech-badge">Demand Planning</span>
-              <span class="tech-badge">Plan de Production</span>
-              <span class="tech-badge">Modélisation Excel</span>
-            </div>
-
-            <div class="project-links">
-              <a href="case-studies.html#energy-protein" class="project-link-btn" style="border-color: var(--accent-purple); color: var(--accent-purple-light);">Consulter l'étude détaillée →</a>
-            </div>
-          </div>
-
-          <div class="project-preview">
-            <div class="ui-mockup">
-              <div class="ui-header">
-                <div class="ui-circle"></div><div class="ui-circle"></div><div class="ui-circle"></div>
-              </div>
-              <div class="ui-stats-grid">
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Analyse</div>
-                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">Multi-Scénarios</div>
-                </div>
-                <div class="ui-stat-card">
-                  <div class="ui-stat-label">Contrainte</div>
-                  <div class="ui-stat-val" style="color: var(--accent-purple-light);">Capacité / Stock</div>
-                </div>
-              </div>
-              <table class="info-table">
-                <tr><td>Domaine</td><td>Agroalimentaire / PGC</td></tr>
-                <tr><td>Focus</td><td>S&OP / Prévision Demande</td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. GESTION DES EXPÉDITIONS & LOGISTIQUE OPÉRATIONNELLE (Bleu) -->
+        <!-- 2. GESTION DES EXPÉDITIONS & LOGISTIQUE OPÉRATIONNELLE (Bleu) -->
         <div class="project-card shopmeaway">
           <div class="project-content">
             <div class="project-header">
@@ -801,6 +740,77 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- APERÇU DES ÉTUDES DE CAS (CÔTE À CÔTE EN 2 COLONNES) -->
+      <div style="margin-top: 3rem;">
+        <h2 class="section-title" style="margin-top: 0;">📊 Études de Cas & Business Analytics</h2>
+
+        <div class="cases-grid">
+
+          <!-- CARTE 1 : MF ENERGY (GAUCHE) -->
+          <div class="project-card mfenergy compact-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">MF Energy : Analytics Distribution Pétrolière</h3>
+                <span class="tag tag-green">Downstream Oil</span>
+              </div>
+              <p class="project-subtitle">Optimisation des stocks de carburant et prévention des ruptures en stations-service.</p>
+
+              <div class="sub-section-box">
+                <div class="sub-section-title">Points clés</div>
+                <ul class="project-details-list">
+                  <li>Modélisation sous Power BI pour équilibrer les niveaux et éviter le surstockage.</li>
+                  <li>Analyse des goulots sur le Gasoil & suivi SLA des transporteurs.</li>
+                </ul>
+              </div>
+
+              <div class="tech-stack">
+                <span class="tech-badge">Power BI</span>
+                <span class="tech-badge">Power Query</span>
+                <span class="tech-badge">Excel</span>
+              </div>
+
+              <div class="project-links" style="margin-top: 1.25rem;">
+                <a href="case-studies.html#mf-energy" class="project-link-btn" style="border-color: var(--accent-green); color: var(--accent-green-light); width: 100%; justify-content: center;">
+                  Consulter l'étude détaillée →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARTE 2 : DEMAND PLANNING ENERGY PROTEIN (DROITE) -->
+          <div class="project-card chainpilot compact-card">
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Demand Planning : Energy Protein</h3>
+                <span class="tag tag-purple">Prévision & S&OP</span>
+              </div>
+              <p class="project-subtitle">Plan de production et arbitrage suite à un pic de demande imprévu (Saveur Fraise).</p>
+
+              <div class="sub-section-box">
+                <div class="sub-section-title">Points clés</div>
+                <ul class="project-details-list">
+                  <li>Modèles de prévision face aux signaux de marché et ventes historiques.</li>
+                  <li>Arbitrage sous contrainte de capacité (900 un/mois) & stock de sécurité.</li>
+                </ul>
+              </div>
+
+              <div class="tech-stack">
+                <span class="tech-badge">Demand Planning</span>
+                <span class="tech-badge">S&OP</span>
+                <span class="tech-badge">Excel</span>
+              </div>
+
+              <div class="project-links" style="margin-top: 1.25rem;">
+                <a href="case-studies.html#energy-protein" class="project-link-btn" style="border-color: var(--accent-purple); color: var(--accent-purple-light); width: 100%; justify-content: center;">
+                  Consulter l'étude détaillée →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- APPEL À L'ACTION : BANNIÈRE ÉTUDES DE CAS -->
