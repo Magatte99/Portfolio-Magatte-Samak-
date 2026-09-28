@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies & Business Analytics — Magatte SAMAKE</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZLPJVRZ69"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MZLPJVRZ69');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+
+      --accent-purple: #a855f7;
+      --accent-purple-light: #c084fc;
+      --accent-purple-bg: rgba(168, 85, 247, 0.1);
+
+      --accent-blue: #38bdf8;
+      --accent-blue-light: #7dd3fc;
+
+      --accent-green: #22c55e;
+      --accent-green-light: #4ade80;
+      --accent-green-bg: rgba(34, 197, 94, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; padding-bottom: 60px; }
+
+    header {
+      position: sticky; top: 0; background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-border);
+      z-index: 100; padding: 1rem 2rem; display: flex;
+      justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+    }
+
+    .nav-logo a { font-weight: 700; font-size: 1.1rem; color: var(--text-primary); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
+
+    .container { max-width: 1050px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+    .page-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center; }
+    .page-subtitle { color: var(--text-secondary); text-align: center; max-width: 720px; margin: 0 auto 3.5rem auto; font-size: 1rem; }
+
+    .case-block {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .case-block.energyprotein { border-top: 5px solid var(--accent-purple); }
+    .case-block.mfenergy { border-top: 5px solid var(--accent-green); }
+
+    .case-header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.8rem; border-radius: 6px; font-size: 0.75rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block;
+    }
+    .tag-purple { background: var(--accent-purple-bg); color: var(--accent-purple-light); border: 1px solid rgba(168, 85, 247, 0.3); }
+    .tag-green { background: var(--accent-green-bg); color: var(--accent-green-light); border: 1px solid rgba(34, 197, 94, 0.3); }
+
+    .case-date { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
+
+    .case-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .case-subtitle { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; line-height: 1.5; }
+
+    .divider { border: 0; border-top: 1px solid var(--card-border); margin: 2rem 0; }
+
+    .section-h3 {
+      font-size: 1.15rem; font-weight: 700; color: var(--text-primary);
+      margin: 1.75rem 0 1rem 0; text-transform: uppercase; letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .section-h3::before {
+      content: ""; display: inline-block; width: 4px; height: 16px; border-radius: 2px;
+    }
+    .energyprotein .section-h3::before { background-color: var(--accent-purple); }
+    .mfenergy .section-h3::before { background-color: var(--accent-green); }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 768px) {
+      .grid-cards { grid-template-columns: repeat(2, 1fr); }
+      .grid-cards-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-cards-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .inner-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .inner-card-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .inner-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .conclusion-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+    }
+
+    .conclusion-table th, .conclusion-table td {
+      padding: 1rem;
+      border: 1px solid var(--card-border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .conclusion-table th {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-primary);
+      font-weight: 700;
+      width: 30%;
+    }
+
+    .conclusion-table td {
+      color: var(--text-secondary);
+      background: rgba(15, 23, 42, 0.3);
+      line-height: 1.6;
+    }
+
+    .dashboard-img {
+      width: 100%; border-radius: 12px; border: 1px solid var(--card-border);
+      margin: 1.5rem 0; display: block;
+    }
+
+    .btn-group-action {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-action {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.8rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s; border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.7); color: var(--text-primary);
+    }
+    .energyprotein .btn-action:hover { border-color: var(--accent-purple); color: var(--accent-purple-light); }
+    .mfenergy .btn-action:hover { border-color: var(--accent-green); color: var(--accent-green-light); }
+
+    footer { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--card-border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-logo"><a href="index-en.html">MAGATTE SAMAKE</a></div>
+    <ul class="nav-links">
+      <li><a href="index-en.html#projects">Supply Chain Projects</a></li>
+      <li><a href="case-studies-en.html" class="active">Case Studies</a></li>
+      <li><a href="index-en.html#parcours">Experience</a></li>
+      <li><a href="index-en.html#competences">Skills</a></li>
+      <li><a href="case-studies.html">Version Française</a></li>
+    </ul>
+  </header>
+
+  <div class="container">
+
+    <h1 class="page-title">Case Studies & Business Analytics</h1>
+    <p class="page-subtitle">
+      In-depth strategic analyses, S&OP modeling, capacity management, and executive decision dashboards.
+    </p>
+
+    <!-- CASE 1: ENERGY PROTEIN -->
+    <article id="energy-protein" class="case-block energyprotein">
+      <div class="case-header-meta">
+        <span class="tag tag-purple">Demand Planning & S&OP</span>
+        <span class="case-date">February 2026</span>
+      </div>
+
+      <h2 class="case-title">Demand Planning: Energy Protein</h2>
+      <p class="case-subtitle">
+        Strategic analysis and production plan modeling following an unexpected global demand surge.
+      </p>
+
+      <hr class="divider">
+
+      <h3 class="section-h3">Case Study Background</h3>
+      <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.85rem;">
+        Energy Protein is a company specializing in protein energy drinks distributed through two retailers: Auchan (larger volume driver due to store size) and Casino.
+      </p>
+      <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+        The company introduced a new Strawberry flavor, testing it gradually through Auchan. An influencer discovered the product, shared it with her community, and caused an instant viral surge that exhausted store stocks. Auchan subsequently submitted an urgent purchase order for 1,000 units.
+      </p>
+
+      <h3 class="section-h3">Evaluated Scenarios</h3>
+      <div class="grid-cards">
+        <div class="inner-card">
+          <div class="inner-card-title">1. Prudent Scenario</div>
+          <div class="inner-card-desc">Hypothesis based on maintaining moderate volume growth to limit exposure to a rapid decline in social media hype.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">2. Growth Scenario</div>
+          <div class="inner-card-desc">Hypothesis of progressively scaling up Strawberry flavor production to support market adoption.</div>
+        </div>
+      </div>
+
+      <h3 class="section-h3">Exercise Conclusions Table</h3>
+      <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 0.5rem;">
+        Exercise results and strategic recommendations:
+      </p>
+
+      <table class="conclusion-table">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Analysis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Forecast M+1: Selected Scenario</strong></td>
+            <td>For this first month, the Growth scenario was selected. The enthusiasm around the Strawberry flavor is brand new, making it a sound strategy to produce more incrementally while closely monitoring market feedback.</td>
+          </tr>
+          <tr>
+            <td><strong>Forecast M+2: Selected Scenario</strong></td>
+            <td>Continuing the M+1 trend, gradually increasing Strawberry production while keeping other flavors constant allows consumers to become familiar with it, bringing its volume closer to established flavors over time.</td>
+          </tr>
+          <tr>
+            <td><strong>Forecast M+3: Selected Scenario</strong></td>
+            <td>Following the same momentum as M+1 and M+2, progressively scaling production ensures product availability while aligning with demand patterns.</td>
+          </tr>
+          <tr>
+            <td><strong>Priority Flavor</strong></td>
+            <td>At this stage, no single priority flavor can be established: sales history shows that Chocolate and Vanilla are equally popular (with a subtle late lead for Chocolate). As Strawberry was just introduced, consumption trends must be monitored before defining a lead flavor—not to prioritize it exclusively, but to ensure timely replenishment and avoid stockouts.</td>
+          </tr>
+          <tr>
+            <td><strong>Main Risk</strong></td>
+            <td>The primary risk is that the social media hype fades as quickly as it arrived, as social trends are inherently temporary.</td>
+          </tr>
+          <tr>
+            <td><strong>Recommended Action</strong></td>
+            <td>Avoid relying solely on this demand peak, given total production capacity is capped at 900 units across all sales points. In the short term, negotiate with Auchan to stagger or reduce their 1,000-unit order. In the longer term, a phased capacity expansion can be evaluated if demand remains high.</td>
+          </tr>
+          <tr>
+            <td><strong>Should Production Capacity Be Permanently Increased? Why?</strong></td>
+            <td>No, not for now. Current capacity should not be expanded immediately. Based on forecasts, required production remains within the 900-unit ceiling, offering enough margin for short-term growth. The decision should be re-evaluated only if demand consistently exceeds available capacity.</td>
+          </tr>
+          <tr>
+            <td><strong>How to Manage the Influencer Effect?</strong></td>
+            <td>Compare pre- and post-influencer sales trends to measure true impact. If sustained growth is observed over several months, it will serve as a reliable signal to revise forecasts and adjust production permanently.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btn-group-action">
+        <a href="https://docs.google.com/spreadsheets/d/1XRPMZhYwh_OWv2Wl7cLgYCDfMV_YHlrj7BzQUHLKDps/edit?tab=t.0" target="_blank" class="btn-action">
+          View Full Excel Model & Exercise (Google Sheets) &rarr;
+        </a>
+      </div>
+    </article>
+
+    <!-- CASE 2: MF ENERGY -->
+    <article id="mf-energy" class="case-block mfenergy">
+      <div class="case-header-meta">
+        <span class="tag tag-green">Downstream Oil Analytics</span>
+        <span class="case-date">January 2026</span>
+      </div>
+
+      <h2 class="case-title">MF Energy: Oil Distribution & Inventory Management</h2>
+      <p class="case-subtitle">
+        A simulated supply chain case study designed to demonstrate how data can be used to monitor inventory, analyze consumption, and support replenishment decisions across a network of service stations.
+      </p>
+
+      <hr class="divider">
+
+      <h3 class="section-h3">Project Overview & Context</h3>
+      <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem;">
+        MF Energies is a simulated petroleum distribution company operating a network of service stations. The objective is to build a data-driven approach to monitor station inventory, understand consumption patterns, and anticipate replenishment needs while avoiding unnecessary overstocking.
+      </p>
+
+      <h3 class="section-h3">Business Problem</h3>
+      <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.75rem;">
+        How can MF Energies use its operational data to:
+      </p>
+      <div class="grid-cards grid-cards-3" style="margin-bottom: 1.5rem;">
+        <div class="inner-card">
+          <div class="inner-card-title">Inventory Monitoring</div>
+          <div class="inner-card-desc">Monitor inventory levels across stations.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">Risk Identification</div>
+          <div class="inner-card-desc">Identify stations at risk of stockout.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">Consumption Analysis</div>
+          <div class="inner-card-desc">Analyze consumption patterns and evaluate delivery performance.</div>
+        </div>
+      </div>
+
+      <h3 class="section-h3">Data Analysis Approach (3 Steps)</h3>
+      <div class="grid-cards grid-cards-3">
+        <div class="inner-card">
+          <div class="inner-card-title">1. Data Preparation in Excel</div>
+          <div class="inner-card-desc">Structuring and preparing operational data for stations, inventory, consumption, and deliveries.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">2. Power Query ETL</div>
+          <div class="inner-card-desc">Cleaning, checking, and preparing 4 datasets (Stations, Stock, Consumption, Delivery).</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">3. Power BI Visualization</div>
+          <div class="inner-card-desc">Developing a Power BI dashboard to monitor key inventory and replenishment indicators.</div>
+        </div>
+      </div>
+
+      <h3 class="section-h3">Data Structure</h3>
+      <div class="grid-cards grid-cards-4">
+        <div class="inner-card"><div class="inner-card-title">Station Master Data</div></div>
+        <div class="inner-card"><div class="inner-card-title">Stock Inventory Data</div></div>
+        <div class="inner-card"><div class="inner-card-title">Consumption Data</div></div>
+        <div class="inner-card"><div class="inner-card-title">Delivery Data</div></div>
+      </div>
+
+      <h3 class="section-h3">Power BI Dashboard Preview</h3>
+      <img src="mf-energies-dashboard.png" alt="MF Energy Power BI Dashboard" class="dashboard-img">
+
+      <h3 class="section-h3">Key Findings & Supply Chain Insights</h3>
+      <div class="grid-cards">
+        <div class="inner-card">
+          <div class="inner-card-title">1. Gasoil Strain</div>
+          <div class="inner-card-desc">Gasoil is the main point of tension in the network (335,000 L consumed; 34% more than Essence and double Super). As of Jan 31, it is the only product on replenishment alert across all 5 stations simultaneously.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">2. Logistics Delays (ST004 & ST005)</div>
+          <div class="inner-card-desc">The month's two unresolved deliveries both concern Gasoil at ST004 and ST005. Delays stem from process execution (processing time, truck availability) rather than carrier zone coverage.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">3. Dual Replenishment Alert on ST001</div>
+          <div class="inner-card-desc">ST001 (Dakar) is on alert for both Essence and Gasoil simultaneously, requiring a tailored monitoring approach rather than standard replenishment cadences.</div>
+        </div>
+        <div class="inner-card">
+          <div class="inner-card-title">Limitations of Analysis</div>
+          <div class="inner-card-desc">This static diagnosis identifies current pressure points. Future turnover and coverage rate models will provide dynamic early-warning capabilities.</div>
+        </div>
+      </div>
+
+      <div class="btn-group-action">
+        <a href="MF ENERGIES DASHBOARD.pbix" class="btn-action" download>
+          Download Power BI Model (.pbix)
+        </a>
+        <a href="https://docs.google.com/spreadsheets/d/1mlHsierbiNumXsvuOxv48FDdIwmkYPwC/edit?gid=627114145#gid=627114145" target="_blank" class="btn-action">
+          View Source Data (Google Sheets) &rarr;
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Magatte Samaké | Supply Chain Operations & Digitalization</p>
+  </footer>
+
+</body>
+</html>
